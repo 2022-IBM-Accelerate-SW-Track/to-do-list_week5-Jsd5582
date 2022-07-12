@@ -24,11 +24,11 @@ Implementation requirements:
 2. Go to the GET listener "app.get("/get/items", getItems)"
 3. At the comment "//begin here" copy/paste/type the following code to read in the todo lists stored in the database.json file:
 ```
-    var data = fs.readFileSync('database.json');
+    var data = fs.readFileSync('database.json');-
 ```
 4. Return a response to whoever called the data we just read in, we will return the data from the file but parsed as JSON data:
 ```
-    response.json(JSON.parse(data));
+    response.json(JSON.parse(data));-
 ```
 #### Testing
 We will test this service using the curl utility.  The curl utility is quite useful because it can send requests to services, simulating consuming applications that would utilize the backend service.
