@@ -42,7 +42,7 @@ We will test this service using the curl utility.  The curl utility is quite use
 
 3. Open another terminal or command window.  Type this curl command to send a request to this service:
 ```
-    curl http://localhost:8080/get/items
+    curl http://localhost:8080/get/items-
 ```
 
 ### GET Service - Search for and Return a ToDo List
@@ -113,7 +113,7 @@ If you want to search for a task name with a space in it, for example "hello wor
             }
             fetchData();
         }, []);
-        return <div>{todos}</div>
+        return <div>{todos}</div>-
 ```
 2. Note the above code does a number of things, it makes use of the "useEffect" hook in react, and the await keyword, this combination is essentially telling react to wait for a call to a backend service to complete, then proceeds with the rest of the render.  Remember that nodeJS is asynchronous platform, so statements can get executed before data is prepared and ready to return. In the case of our Axios.get above, if we didn't have the await in front of it then the rest of the code will proceed and attempt to render before our response is returned from the backend service.  To solve this we said that this function is asynchronous and hence we will receive a response from the backend service before proceeding.
 
@@ -158,7 +158,7 @@ If you want to search for a task name with a space in it, for example "hello wor
                 tmpdata: JSON.stringify(res.data),
                 });
         
-            });
+            });-
 ```
 2. Some things to note, there are some UI components defined in this file, the main things they will do is submit a form which will trigger the call to the searchitem backend service, as part of that submit we will take the name of the Todo to search for from the "this.state.content" parameter, the a user would type in the UI text box.
 3. Note also we have state associated with this component "tmpdata", this state will be set to the data returned from the backend service via the "this.setState({tmpdata: JSON.stringify(res.data),});" code we just put in the HandleSubmit method.
